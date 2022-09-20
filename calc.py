@@ -20,7 +20,12 @@ while(exit != 1):
         y = float(input('Y : '))
         op = input('Operation?\n(+)\n(-)\n(*)\n(/)\n(**)\n')
         result = calc(x, y, op)
+        saved_outputs.push(result)
         print(f'{x} {op} {y} = {result}')
+        view_saved = input('View saved outputs?(Y or N)')
+        if(view_saved.upper() == 'Y'):
+            while(saved_outputs.isEmpty() == False):
+                print(saved_outputs.pop())
         exit = input('Exit?(Y or N)\n')
         if(exit.upper() == 'Y'):
             exit = 1
